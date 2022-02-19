@@ -1,7 +1,7 @@
 # To stop the execution, hit Ctrl+C, and then `docker-compose -f docker-compose.yml down`
 version: "4"
 services:
-  chrome:
+  chrome01:
     image: selenium/node-chrome:4.0.0
     shm_size: 2gb
     depends_on:
@@ -15,9 +15,8 @@ services:
       - SE_MAX_INSTANCES=4
     ports:
       - "6900:5900"
-
-  edge:
-    image: selenium/node-edge:4.0.0
+  chrome02:
+    image: selenium/node-chrome:4.0.0
     shm_size: 2gb
     depends_on:
       - selenium-hub
@@ -30,9 +29,8 @@ services:
       - SE_MAX_INSTANCES=4
     ports:
       - "6901:5900"
-
-  firefox:
-    image: selenium/node-firefox:4.0.0
+  chrome03:
+    image: selenium/node-chrome:4.0.0
     shm_size: 2gb
     depends_on:
       - selenium-hub
@@ -45,15 +43,142 @@ services:
       - SE_MAX_INSTANCES=4
     ports:
       - "6902:5900"
+  chrome04:
+    image: selenium/node-chrome:4.0.0
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_GRID_URL=http://localhost:4444
+      - SE_NODE_MAX_SESSIONS=4
+      - SE_MAX_INSTANCES=4
+    ports:
+      - "6903:5900"
+
+  edge01:
+    image: selenium/node-edge:4.0.0
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_GRID_URL=http://localhost:4444
+      - SE_NODE_MAX_SESSIONS=4
+      - SE_MAX_INSTANCES=4
+    ports:
+      - "6904:5900"
+  edge02:
+    image: selenium/node-edge:4.0.0
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_GRID_URL=http://localhost:4444
+      - SE_NODE_MAX_SESSIONS=4
+      - SE_MAX_INSTANCES=4
+    ports:
+      - "6905:5900"
+  edge03:
+    image: selenium/node-edge:4.0.0
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_GRID_URL=http://localhost:4444
+      - SE_NODE_MAX_SESSIONS=4
+      - SE_MAX_INSTANCES=4
+    ports:
+      - "6906:5900"
+  edge04:
+    image: selenium/node-edge:4.0.0
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_GRID_URL=http://localhost:4444
+      - SE_NODE_MAX_SESSIONS=4
+      - SE_MAX_INSTANCES=4
+    ports:
+      - "6907:5900"
+  firefox01:
+    image: selenium/node-firefox:4.0.0
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_GRID_URL=http://localhost:4444
+      - SE_NODE_MAX_SESSIONS=4
+      - SE_MAX_INSTANCES=4
+    ports:
+      - "6908:5900"
+  firefox02:
+    image: selenium/node-firefox:4.0.0
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_GRID_URL=http://localhost:4444
+      - SE_NODE_MAX_SESSIONS=4
+      - SE_MAX_INSTANCES=4
+    ports:
+      - "6909:5900"
+  firefox03:
+    image: selenium/node-firefox:4.0.0
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_GRID_URL=http://localhost:4444
+      - SE_NODE_MAX_SESSIONS=4
+      - SE_MAX_INSTANCES=4
+    ports:
+      - "6910:5900"
+  firefox04:
+    image: selenium/node-firefox:4.0.0
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_GRID_URL=http://localhost:4444
+      - SE_NODE_MAX_SESSIONS=4
+      - SE_MAX_INSTANCES=4
+    ports:
+      - "6911:5900"
 
   selenium-hub:
     image: selenium/hub:4.0.0
     container_name: selenium-hub
     ports:
-      - "4441:4441"
       - "4442:4442"
       - "4443:4443"
       - "4444:4444"
+      - "4445:4445"
     environment:
       - GRID_MAX_SESSION=5
 
@@ -64,3 +189,4 @@ services:
       - chrome 
       - edge
       - firefox
+

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ptJx+RFSMb1KM1Ez8INwUucddcYijsufZS1GOCIdX40k3o2P+AoDQGCCdonQVFN3eedcizfqq0J2YhvzyiAXoA==",
+  "dgSpecHash": "T9MEqQ6ux9Xc7vN/79kP0M39ql+JYvolrGxss8BNx/50bP6m2vW+ekm7CoMRyUbF4dxO8NJNwkO2IEHMk0sgkw==",
   "success": true,
   "projectFilePath": "/home/kxn/repos/seleniumExample/seleniumExample.csproj",
   "expectedPackageFiles": [
@@ -102,6 +102,7 @@
     "/home/kxn/.nuget/packages/system.xml.readerwriter/4.3.0/system.xml.readerwriter.4.3.0.nupkg.sha512",
     "/home/kxn/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512",
     "/home/kxn/.nuget/packages/system.xml.xmldocument/4.3.0/system.xml.xmldocument.4.3.0.nupkg.sha512",
+    "/home/kxn/.nuget/packages/microsoft.netcore.app.ref/5.0.0/microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
     "/home/kxn/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
   ],
   "logs": []
